@@ -16,11 +16,12 @@
             <li><a class="nav-title" href="explore.html">EXPLORE</a></li>
             <li><a class="nav-title" href="information.html">INFORMATION</a></li>
             <li><a class="nav-title" href="about.html">ABOUT</a></li>
+            <li><a class="nav-title" href="https://www.figma.com/proto/Zjwnzqwu1TQ5ipsg8pVvyT/EcoStories?node-id=140-5149&node-type=frame&t=yveIYpPaRNDTdjql-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A3&starting-point-node-id=140%3A5149" target="_blank">ROADMAP ⤴ </a></li>
         </ul>
     </nav>
     <hr>
     <div class="filters">
-        <select name="contaminacion" id="contaminacion-select" onchange="selectContent()">
+        <select name="contaminacion" id="dataset-select" onchange="selectContent()">
             <option value="odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212">Fossic Fuel CO2 Emissions</option>
             <option value="sedac-popdensity-yeargrid5yr-v4.11-2020">Population Density</option>
             <option value="eccodarwin-co2flux-monthgrid-v5-202212">Methane Emissions</option>
@@ -39,9 +40,9 @@
         <input class="filter-button" type="button" value="i"/>
         <img class="filter-heat" src="img/heat1.png">
     </div>
-    <!-- <div id="iframe-container" class="iframe-container"></div>
+    <div id="iframe-container" class="iframe-container"></div>
         <iframe id="nasa-iframe" src="" width="100%" height="100%"></iframe>
-    </div> -->
+    </div>
     <script src="explore.js"></script>
 </body>
 </html>

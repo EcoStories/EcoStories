@@ -1,12 +1,14 @@
 function selectContent(){
     const body = document.getElementsByTagName('body')[0];
-    const select = document.getElementById("contaminacion-select");
+    const select = document.getElementById("dataset-select");
     
     if(select.value == "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212"){
         body.style.backgroundImage = 'url(img/map1.png)';
         loadMap("https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet")
     }else if(select.value == "sedac-popdensity-yeargrid5yr-v4.11-2020"){
         body.style.backgroundImage = 'url(img/map2.png)';
+        
+        const id = document.getElementById("2000 - 2020");
         loadMap("https://earth.gov/ghgcenter/api/raster/collections/sedac-popdensity-yeargrid5yr-v4.11/items/sedac-popdensity-yeargrid5yr-v4.11-2020/map?assets=population-density&nodata=-3.402823e%2B38&rescale=0%2C1000&colormap_name=ylorrd")
     }else if(select.value == "eccodarwin-co2flux-monthgrid-v5-202212"){
         body.style.backgroundImage = 'url(img/map3.png)';
@@ -47,13 +49,19 @@ function loadMap(url){
 
 // map.setZoom(4)
 
-// //Función para cargar puntos desde el backend
-// function loadPoints() {
-//     fetch('https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet')
-//         .then(response => response.json())
-//         .then(data => {
-//             L.geoJSON(data).addTo(map);
-//         });
-// }
+//Función para cargar puntos desde el backend
+function loadPoints() {
+    const select = document.getElementById("dataset-select")
+    fetch('https://earth.gov/ghgcenter/api/stac')
+        .then(response => response.json())
+        .then(data => {
+            const result = data.links.filter(d => d.rel == "child");
+            result.forEach(function(item) {
+                select.innerHTML = "";
+                select.append(`<option value=${item.index}>${item.title}<option/>`);
+            });
+            //L.geoJSON(data).addTo(map);
+        });
+}
 
-// loadPoints();
+loadPoints();
