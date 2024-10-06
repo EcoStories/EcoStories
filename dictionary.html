@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background-image: url("img/back.jpeg");
+    
+}
+.search-container {
+            display: flex;
+            border: 2px solid #007BFF; /* Borde azul */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .search-input {
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            width: 300px; /* Ancho del campo de búsqueda */
+        }
+        .search-button {
+            background-color: #007BFF; /* Color de fondo del botón */
+            color: white; /* Texto blanco */
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-button:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+        }
+        nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 33px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a {
+            color: #ffffff; /* Color del texto */
+            text-decoration: none; /* Sin subrayado */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        nav a:hover {
+            background-color: #000000; /* Color de fondo al hacer hover */
+            color: #160077; /* Cambiar color del texto al hacer hover */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        Dictionary
+    </h1>
+    <nav>
+        <ul class="words">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button class="search-button" onclick="searchFunction()">Buscar</button>
+    </div>
+    
+    <script>
+        function searchFunction() {
+            const query = document.querySelector('.search-input').value;
+            alert("Buscando: " + query); // Aquí puedes reemplazarlo con la lógica de búsqueda real
+        }
+    </script>
+
+</body>
+</html>

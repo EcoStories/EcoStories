@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+
+    <nav>
+        <ul class="words">
+            <li><a href="#">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <section class="hero">
+        <div class="globe">
+            <img src="/img/earth.gif" alt="" class="img">
+        </div>
+        <div class="content">
+            <h1 class="texto-con-gif">THE EARTH<br>IS CHANGING</h1>
+            <div class="ppp">
+                <p>Embark on an extraordinary journey across the world map and learn how diverse climatic factors <br> affect 
+                    landscapes. Discover hidden insights that reveal the essence of each place, 
+                    from rainforests that absorb <br>carbon dioxide to ancient deserts that reflect 
+                    the effects of global warming.</p>
+            </div>
+            <button class="nnn">Explore</button>
+            <button id="leer">Read this</button>
+        </div>
+
+    </section>
+    <script>
+        document.getElementById('leer').addEventListener('click', function() {
+    const texto = document.body.innerText; // Obtiene todo el texto de la página
+    const utterance = new SpeechSynthesisUtterance(texto); // Crea un nuevo objeto de síntesis de voz
+    utterance.rate = 0.7; // Ajusta la velocidad de la voz (1 es la velocidad normal, menos de 1 es más lento)
+    speechSynthesis.speak(utterance); // Reproduce el texto
+});
+    </script>
+
+</body>
+</html>

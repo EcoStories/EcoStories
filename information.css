@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background-image: url("img/back.jpeg");
+    
+}
+p{
+    color: white;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 33px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+.linea{
+    
+        border: none; /* Elimina el borde predeterminado */
+        height: 2px; /* Altura de la línea */
+        background-color: rgba(87, 84, 84, 0.5); /* Color gris con 50% de transparencia */
+        margin: 20px 0; /* Margen alrededor de la línea */
+    
+}
+.contenedor {
+    text-align: center; /* Centra el texto y las imágenes dentro del contenedor */
+}
+
+.imagen {
+    margin: 10px; /* Espacio entre las imágenes */
+    width: 300px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 10px; /* Espacio entre las imágenes */
+}

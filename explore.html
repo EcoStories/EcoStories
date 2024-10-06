@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa con Puntos Filtrados</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <a href="styles.css"></a>
+    <style>
+        body {
+            background-image: url("img/28e58003910787d9d4144a462474afd5.jpeg");
+        }
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu-container.logo-container {
+            font-family: Jockey One;
+            font-size: 19.83px;
+            font-weight: 400;
+            line-height: 27.72px;
+            text-align: left;
+        }
+        .leaflet-container {
+            background: #000;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="logo-container">
+            EcoStories
+        </div>
+        <div class="sections-container">
+            <span>HOME</span>
+            <span>EXPLORE</span>
+            <span>HELP</span>
+            <span>ABOUT</span>
+        </div>
+    </div>
+    <div id="map" style="leaflet-container"></div>
+    <button class="floating-button">Filtrar Datos</button>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializa el mapa
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Añadir capa de mapa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+
+        // Función para cargar puntos desde el backend
+        function loadPoints() {
+            fetch('/get_points')
+                .then(response => response.json())
+                .then(data => {
+                    L.geoJSON(data).addTo(map);
+                });
+        }
+
+        loadPoints();
+    </script>
+</body>
+</html>

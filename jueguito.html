@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Detective</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001e4e; /* Color de fondo oscuro */
+            color: #ffffff; /* Texto blanco */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #003366; /* Azul oscuro */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00; /* Color amarillo */
+            margin: 0;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ffcc00; /* Color amarillo */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            background-color: #003366; /* Azul oscuro */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #001e4e; /* Color de fondo oscuro */
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #ffcc00; /* Color de fondo del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button:hover {
+            background-color: #e6b800; /* Color al pasar el ratón */
+        }
+        .game-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .drag-game, .match-game {
+            background-color: #00509e; /* Azul claro */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            position: relative;
+        }
+        .gas {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            background-color: #ffccbc; /* Color de gas */
+            border: 2px solid #d32f2f; /* Borde rojo */
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        .dropzone {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ffcc00; /* Borde amarillo */
+            border-radius: 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+        .dropzone p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            color: #ffcc00; /* Texto amarillo */
+            font-size: 24px;
+        }
+        .match-word {
+            margin: 5px 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eco Detective</h1>
+    <nav>
+        <a href="#introduccion">Introducción</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section id="introduccion">
+    <h2>¿Qué son los Gases de Efecto Invernadero?</h2>
+    <p>Los gases de efecto invernadero son aquellos que atrapan el calor en la atmósfera, contribuyendo al cambio climático. En esta sección aprenderás sobre su impacto en el planeta.</p>
+</section>
+
+<section id="actividades">
+    <h2>Actividades para Aprender</h2>
+    
+    <div class="game-container">
+        <div class="drag-game">
+            <h3>Juego de Arrastre</h3>
+            <div class="gas" draggable="true" ondragstart="drag(event)" id="co2" style="left: 120px; top: 20px;">CO2</div>
+            <div class="gas" draggable="true" ondragstart="drag(event)" id="ch4" style="right: 120px; top: 21px;">CH4</div>
+            <div class="dropzone" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <p>Zona de Investigación</p>
+            </div>
+        </div>
+
+        <div class="match-game">
+            <h3>Juego de Emparejamiento</h3>
+            <p class="match-word">1. Dióxido de carbono (CO2)</p>
+            <input type="text" placeholder="Escribe la respuesta" id="match 1">
+            <p class="match-word">2. Metano (CH4)</p>
+            <input type="text" placeholder="Escribe la respuesta" id="match 2">
+            <button onclick="checkMatches()">Verificar Respuestas</button>
+        </div>
+    </div>
+</section>
+
+<section id="recursos">
+    <h2>Recursos Adicionales</h2>
+    <p>Explora los siguientes recursos para aprender más sobre el cambio climático:</p>
+    <ul>
+        <li><a href="https://climate.nasa.gov/" target="_blank">NASA Climate Change</a></li>
+        <li><a href="https://www.epa.gov/climatechange" target="_blank">EPA - Climate Change</a></li>
+        <li><a href="https://www.un.org/en/climatechange" target="_blank">United Nations - Climate Change</a></li>
+    </ul>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Si tienes preguntas o sugerencias, no dudes en <a href="mailto:info@ecodetective.org" style="color: #ffcc00;">contactarnos</a>.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Eco Detective. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        var gasElement = document.getElementById(data);
+        if (!event.target.contains(gasElement)) {
+            event.target.appendChild(gasElement);
+        }
+    }
+
+    function checkMatches() {
+        const correctAnswers = {
+            match1: "CO2",
+            match2: "CH4"
+        };
+        let score = 0;
+
+        for (let key in correctAnswers) {
+            const userAnswer = document.getElementById(key).value.trim();
+            if (userAnswer.toUpperCase() === correctAnswers[key]) {
+                score++;
+                alert(`¡Correct! ${key} es ${correctAnswers[key]}.`);
+            } else {
+                alert(`Incorrect. ${key} es ${correctAnswers[key]}.`);
+            }
+        }
+        alert(`Tu puntuación: ${score} de ${Object.keys(correctAnswers).length}`);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background-image: url("/img/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.ppp{
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    margin: 2px;
+    padding: 1; 
+}
+#map {
+    position: relative;
+}
+img{
+    align-items: center;
+    width: 333px;
+    height: 333px;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 33px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    border-radius: 33;
+}
+
+button:hover {
+    background-color: rgba(2, 8, 93, 0.4);
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+}
+.container {
+    position: relative; /* Para posicionar el GIF sobre el texto */
+}
+
+.texto-con-gif {
+    color:#FFFF;
+    font-size: 48px; /* Tamaño de la fuente */
+    color: #ffffff; /* Color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    position: relative; /* Para asegurar que el texto esté en el nivel correcto */
+}
+
+.gif-superpuesto {
+    position: absolute;
+    top: 0; /* Ajusta según necesites */
+    left: 0; /* Ajusta según necesites */
+    width: 100px; /* Ajusta el tamaño del GIF */
+    height: auto; /* Mantiene la proporción del GIF */
+    opacity: 0.7; /* Ajusta la opacidad del GIF */
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

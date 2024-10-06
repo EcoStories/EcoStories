@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+    <nav>
+        <ul class="words">
+            <li><a href="/">HOME</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <section class="hero">
+        <div class="globe">
+            <img src="img/earth1.gif" alt="" class="img">
+        </div>
+        <div class="content">
+            <h1 class="texto-con-gif">THE EARTH<br>IS CHANGING</h1>
+
+            <button class="nnn">Explore</button>
+            <button id="leer">Read this</button>
+        </div>
+        
+    </section>
+    <script>
+        document.getElementById('leer').addEventListener('click', function() {
+    const texto = document.body.innerText; // Obtiene todo el texto de la página
+    const utterance = new SpeechSynthesisUtterance(texto); // Crea un nuevo objeto de síntesis de voz
+    utterance.rate = 0.7; // Ajusta la velocidad de la voz (1 es la velocidad normal, menos de 1 es más lento)
+    speechSynthesis.speak(utterance); // Reproduce el texto
+});
+    </script>
+    
+</body>
+</html>
