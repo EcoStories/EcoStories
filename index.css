@@ -102,5 +102,14 @@ button {
     border: 0.2px solid;
     border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 100%);
     margin-top: 50px;
+}
 
+.line {
+    width: 1571px;
+    height: 32px;
+    top: 151px;
+    left: 78px;
+    gap: 0px;
+    border: 1px solid;
+    border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50.31%, rgba(255, 255, 255, 0) 100%);
 }
