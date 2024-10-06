@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background-image: url("img/back.jpeg");
+    
+}
+.search-container {
+            display: flex;
+            border: 2px solid #000000; /* Borde azul */
+            justify-content: center;
+            padding: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+
+        }
+        nav {
+        display: flex;
+        justify-content: flex-end;
+        padding: 33px;
+        background: rgba(0, 0, 0, 0.5);
+}
+.search-input {
+            width: 90%; /* Ancho proporcional de la barra de búsqueda */
+            max-width: 1011px; /* Ancho máximo */
+            padding: 10px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de fuente */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+        .search-button {
+            padding: 10px 15px; /* Espaciado interno */
+            background-color: #ffcc00; /* Color de fondo del botón */
+            color: #003366; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 0 5px 5px 0; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+        }
+        .search-button:hover {
+            background-color: #002ae6; /* Color más oscuro al pasar el ratón */
+        }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a {
+            color: #ffffff; /* Color del texto */
+            text-decoration: none; /* Sin subrayado */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        nav a:hover {
+            background-color: #000000; /* Color de fondo al hacer hover */
+            color: #ff0000; /* Cambiar color del texto al hacer hover */
+        }
+        .gallery {
+            display: flex; /* Utiliza Flexbox para alinear las imágenes */
+            justify-content: space-around; /* Espaciado uniforme entre imágenes */
+            flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias líneas si es necesario */
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-content: stretch;
+            align-items: center;
+        }
+        .gallery img {
+            width: 675px; /* Ancho de la imagen */
+            height: 294px; /* Alto de la imagen */
+            object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+            margin: 10px; /* Espaciado entre las imágenes */
+            border-radius: 8px; /* Bordes redondeados */
+            
+        }
+        .title{
+            width: 204px;
+            height: 45px;
+            flex-shrink: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="dictionary-search-filter-container">
+           <div class="title">Dictionary</div>
+           <div class="search-container">
+            <div class="search-title">Search the word:</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+                <button class="search-button" onclick="searchFunction()">Buscar</button>
+            </div>
+           <div class="filter-title">Filter by Map:</div>
+    </div>
+    <nav>
+        <ul class="words">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <hr>
+    
+    <div class="contenedor">
+        <div class="gallery">
+            <img src="img/Cap1.png" alt="Imagen 1" class="imagen">
+            <img src="img/cap2.jpeg" alt="Imagen 2" class="imagen">
+            <img src="img/cap3.jpeg" alt="Imagen 3" class="imagen"> 
+            <img src="img/cap4.jpeg" alt="Imagen 4" class="imagen">
+        </div>
+    </div>  
+    
+    <script>
+        function searchFunction() {
+            const query = document.querySelector('.search-input').value;
+            alert("Buscando: " + query); // Aquí puedes reemplazarlo con la lógica de búsqueda real
+        }
+    </script>
+
+</body>
+</html>

@@ -14,26 +14,12 @@ body {
 }
 .search-container {
             display: flex;
-            border: 2px solid #007BFF; /* Borde azul */
+            border: 2px solid #000000; /* Borde azul */
+            justify-content: center;
+            padding: 20px;
             border-radius: 5px;
             overflow: hidden;
-        }
-        .search-input {
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            width: 300px; /* Ancho del campo de búsqueda */
-        }
-        .search-button {
-            background-color: #007BFF; /* Color de fondo del botón */
-            color: white; /* Texto blanco */
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .search-button:hover {
-            background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+
         }
         nav {
     display: flex;
@@ -41,6 +27,25 @@ body {
     padding: 33px;
     background: rgba(0, 0, 0, 0.5);
 }
+.search-input {
+            width: 90%; /* Ancho proporcional de la barra de búsqueda */
+            max-width: 1011px; /* Ancho máximo */
+            padding: 10px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de fuente */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+        .search-button {
+            padding: 10px 15px; /* Espaciado interno */
+            background-color: #ffcc00; /* Color de fondo del botón */
+            color: #003366; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 0 5px 5px 0; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+        }
+        .search-button:hover {
+            background-color: #002ae6; /* Color más oscuro al pasar el ratón */
+        }
 
 nav ul {
     list-style-type: none;
@@ -66,7 +71,18 @@ nav a {
             background-color: #000000; /* Color de fondo al hacer hover */
             color: #160077; /* Cambiar color del texto al hacer hover */
         }
-
+        .gallery {
+            display: flex; /* Utiliza Flexbox para alinear las imágenes */
+            justify-content: space-around; /* Espaciado uniforme entre imágenes */
+            flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias líneas si es necesario */
+        }
+        .gallery img {
+            width: 675px; /* Ancho de la imagen */
+            height: 294px; /* Alto de la imagen */
+            object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+            margin: 10px; /* Espaciado entre las imágenes */
+            border-radius: 8px; /* Bordes redondeados */
+        }
     </style>
 </head>
 <body>
@@ -86,6 +102,14 @@ nav a {
         <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
         <button class="search-button" onclick="searchFunction()">Buscar</button>
     </div>
+    <div class="contenedor">
+        <div class="gallery">
+            <img src="img/Cap1.png" alt="Imagen 1" class="imagen">
+            <img src="img/cap2.jpeg" alt="Imagen 2" class="imagen">
+            <img src="img/cap3.jpeg" alt="Imagen 3" class="imagen"> 
+            <img src="img/cap4.jpeg" alt="Imagen 4" class="imagen">
+        </div>
+    </div>  
     
     <script>
         function searchFunction() {

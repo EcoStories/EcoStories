@@ -10,9 +10,16 @@ body {
 }
 img{
     align-items: center;
-    width: 333px;
-    height: 333px;
+    width: 600px;
+    height: 600px;
 }
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 33px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 nav {
     display: flex;
     justify-content: flex-end;
@@ -33,6 +40,17 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+nav a {
+            color: #ffffff; /* Color del texto */
+            text-decoration: none; /* Sin subrayado */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        nav a:hover {
+            background-color: #000000; /* Color de fondo al hacer hover */
+            color: #160077; /* Cambiar color del texto al hacer hover */
+        }
 
 .hero {
     display: flex;
@@ -97,8 +115,8 @@ button:hover {
     position: absolute;
     top: 0; /* Ajusta según necesites */
     left: 0; /* Ajusta según necesites */
-    width: 100px; /* Ajusta el tamaño del GIF */
-    height: auto; /* Mantiene la proporción del GIF */
+    width: 700px; /* Ajusta el tamaño del GIF */
+    height: 700px; /* Mantiene la proporción del GIF */
     opacity: 0.7; /* Ajusta la opacidad del GIF */
 }
 button {
