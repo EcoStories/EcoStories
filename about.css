@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background-image: url("img/back.jpeg");
+    
+}
+p{
+    color: white;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 33px;
+    padding-right: 33px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+.linea{
+    
+        border: none; /* Elimina el borde predeterminado */
+        height: 2px; /* Altura de la línea */
+        background-color: rgba(87, 84, 84, 0.5); /* Color gris con 50% de transparencia */
+        margin: 20px 0; /* Margen alrededor de la línea */
+    
+}
+
+.contenedor {
+    margin: 2%;
+}
+
+.purple-card {
+    background-color: purple;
+    padding: 50px;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(65.11deg, #11071D 20.83%, rgba(128, 82, 193, 0) 100%), radial-gradient(55.07% 119.8% at 100% 60.42%, rgba(88, 30, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 4px solid rgba(123, 123, 123, 1);
+}
+
+.purple-card-first-section {
+    display: flex;
+}
+
+.purple-card-first-section-image {
+    transform: rotate(90deg);
+}
+
+.purple-card-title {
+    color: white;
+    font-family: Jockey One;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 67.1px;
+}
+
+.purple-card-details {
+    color: white;
+    font-family: Jockey One;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.74px;
+}
+
+.purple-card-first-section-info {
+    text-align: left;
+}
+
+.purple-card-second-section-info {
+    text-align: right;
+}
+
+.purple-card-third-section {
+    display: flex;
+    align-items: center;
+}
+
+.purple-card-third-section-info {
+    text-align: left;
+}
+
+.purple-card-members-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    row-gap: 20px;
+}
+
+.purple-card-members-title {
+    color: white;
+    font-family: Jockey One;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.74px;
+    text-align: center;
+}
+
+.purple-card-members-images {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.purple-card-member-name {
+    color: white;
+    font-family: Jockey One;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25.41px;
+    text-align: center;
+}
+
+.purple-card-member-circle-image {
+    border-radius: 500px;
+    width: 172px;
+    height: 180px;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.imagen {
+    margin: 10px; /* Espacio entre las imágenes */
+    width: 300px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 10px; /* Espacio entre las imágenes */
+}
