@@ -2,75 +2,29 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        body {
-            background-image: url("static/28e58003910787d9d4144a462474afd5.jpeg");
-        }
-        .menu-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .menu-container.logo-container {
-            font-family: Jockey One;
-            font-size: 19.83px;
-            font-weight: 400;
-            line-height: 27.72px;
-            text-align: left;
-        }
-        
-        #iframe-container {
-            height: 80vh;
-            width: 100%;
-        }
-
-        .leaflet-container {
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !important; 
-        }
-        
-        /* .leaflet-layer,
-        .leaflet-control-zoom-in,
-        .leaflet-control-zoom-out,
-        .leaflet-control-attribution {
-        filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !important;
-        } */
-
-        select {
-            height: 44px;
-            border-radius: 10px;
-            border: 0.2px;
-            max-width: 270px;
-            background: rgba(196, 190, 190, 0.62);
-            border: 0.2px solid;
-            border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 100%);
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="explore.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
 </head>
 <body onload="selectContent()">
     <nav>
+        <img src="img/EcoStories.png" />
         <ul class="words">
-            <li><a href="/">HOME</a></li>
-            <li><a href="explore.html">EXPLORE</a></li>
-            <li><a href="information.html">INFORMATION</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a class="nav-title" href="/">HOME</a></li>
+            <li><a class="nav-title" href="explore.html">EXPLORE</a></li>
+            <li><a class="nav-title" href="information.html">INFORMATION</a></li>
+            <li><a class="nav-title" href="about.html">ABOUT</a></li>
         </ul>
     </nav>
     <hr>
-    <div id="iframe-container" class="iframe-container">
-        <!-- <div id="map"></div> -->
-        <iframe id="nasa-iframe" src="" width="100%" height="100%"></iframe>
-    </div>
     <div class="filters">
         <select name="contaminacion" id="contaminacion-select" onchange="selectContent()">
-            <option value="oco2geos-co2-daygrid-v10r">OCO-2 GEOS Column CO₂ Concentrations</option>
-            <option value="Air-Sea">Air-Sea CO₂ Flux, ECCO-Darwin Model v5</option>
-            <option value="oco2-mip-co2budget-yeargrid-v1-2020">oco2-mip-co2budget-yeargrid-v1-2020</option>
-
-            <!-- <option value="odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212">ODIAC Fossil Fuel CO₂ Emissions</option>
-            <option value="gosat-based-ch4budget-yeargrid-v1-2019">GOSAT-based Top-down Total and Natural Methane Emissions</option>
-            <option value="eccodarwin-co2flux-monthgrid-v5-202212">Air-Sea CO₂ Flux, ECCO-Darwin Model v5</option>
-            <option value="sedac-popdensity-yeargrid5yr-v4.11-2020">SEDAC Gridded World Population Density</option> -->
+            <option value="odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212">Fossic Fuel CO2 Emissions</option>
+            <option value="sedac-popdensity-yeargrid5yr-v4.11-2020">Population Density</option>
+            <option value="eccodarwin-co2flux-monthgrid-v5-202212">Methane Emissions</option>
+            <option value="gosat-based-ch4budget-yeargrid-v1-2019">Air-Sea CO₂ Flux</option>
         </select>
         <select name="area" id="area-select">
             <option value="">Analyze Area</option>
@@ -82,69 +36,9 @@
         <input type="button" value="-"/>
         <input type="button" value="i"/>
     </div>
-    <script>
-        function selectContent(){
-            var select = document.getElementById("contaminacion-select");
-
-            if(select.value == "oco2geos-co2-daygrid-v10r"){
-                loadMap("https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet");
-            }else if(select.value == "Air-Sea"){
-                loadMap("https://earth.gov/ghgcenter/api/raster/collections/lpjeosim-wetlandch4-monthgrid-v2/items/lpjeosim-wetlandch4-monthgrid-v2-202407/map?assets=ensemble-mean-ch4-wetlands-emissions&rescale=0%2C3e-09&colormap_name=magma");
-            }else if(select.value == "oco2-mip-co2budget-yeargrid-v1-2020"){
-                loadMap("https://earth.gov/ghgcenter/api/raster/collections/oco2-mip-co2budget-yeargrid-v1/items/oco2-mip-co2budget-yeargrid-v1-2020/map?assets=lnlgis-nbe&nodata=0&rescale=-1200%2C1200&colormap_name=coolwarm")
-            }
-
-            // if(select.value == "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212"){
-            //     loadMap("https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet")
-            // }else if(select.value == "gosat-based-ch4budget-yeargrid-v1-2019"){
-            //     loadMap("https://earth.gov/ghgcenter/api/raster/collections/gosat-based-ch4budget-yeargrid-v1/items/gosat-based-ch4budget-yeargrid-v1-2019/map?assets=post-total&nodata=9.96921e%2B36&rescale=0%2C0.3&colormap_name=spectral_r")
-            // }else if(select.value == "eccodarwin-co2flux-monthgrid-v5-202212"){
-            //     loadMap("https://earth.gov/ghgcenter/api/raster/collections/eccodarwin-co2flux-monthgrid-v5/items/eccodarwin-co2flux-monthgrid-v5-202212/map?assets=co2&nodata=nan&rescale=-0.0007%2C0.0002&colormap_name=bwr")
-            // }else if(select.value == "sedac-popdensity-yeargrid5yr-v4.11-2020"){
-            //     loadMap("https://earth.gov/ghgcenter/api/raster/collections/sedac-popdensity-yeargrid5yr-v4.11/items/sedac-popdensity-yeargrid5yr-v4.11-2020/map?assets=population-density&nodata=-3.402823e%2B38&rescale=0%2C1000&colormap_name=ylorrd")
-            // }
-        }
-
-        function loadMap(url){
-            // // Define iframe with lazy loading
-            // const iframe = document.createElement("iframe");
-            // iframe.src = url;
-            // iframe.width = "100%";
-            // iframe.height = "100%";
-            // iframe.loading = "lazy";
-            // iframe.onload = function() {
-            //     console.log(map)
-            // };
-
-            // // Add to div element with class named frameDiv
-            // const frameDiv = document.getElementById("iframe-container");
-            // frameDiv.innerHTML.innerHTML = "";
-            // frameDiv.append(iframe);
-
-            const iframe = document.getElementById("nasa-iframe");
-            iframe.src = url;
-        }
-        
-        // // Inicializa el mapa
-        // var map = L.map('map').setView([0, 0], 2);
-
-        // // Añadir capa de mapa base
-        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        //     maxZoom: 19
-        // }).addTo(map);
-
-        // map.setZoom(4)
-
-        // //Función para cargar puntos desde el backend
-        // function loadPoints() {
-        //     fetch('https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet')
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             L.geoJSON(data).addTo(map);
-        //         });
-        // }
-
-        // loadPoints();
-    </script>
+    <!-- <div id="iframe-container" class="iframe-container"></div>
+        <iframe id="nasa-iframe" src="" width="100%" height="100%"></iframe>
+    </div> -->
+    <script src="explore.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100%;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+}
+.menu-container.logo-container {
+    font-family: Jockey One;
+    font-size: 19.83px;
+    font-weight: 400;
+    line-height: 27.72px;
+    text-align: left;
+}
+
+#iframe-container {
+    height: 80vh;
+    width: 100%;
+}
+
+.leaflet-container {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !important; 
+}
+
+/* .leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) !important;
+} */
+
+select {
+    height: 44px;
+    border-radius: 10px;
+    border: 0.2px;
+    max-width: 270px;
+    background: rgba(196, 190, 190, 0.62);
+    border: 0.2px solid;
+    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 100%);
+}

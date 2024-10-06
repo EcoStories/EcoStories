@@ -1,57 +1,7 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: rgb(0, 0, 0);
-    background-image: url("img/back.jpeg");
-}
-
-#map {
-    position: relative;
-}
-
-img{
+.earth-img{
     align-items: center;
     width: 600px;
     height: 600px;
-}
-
-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 33px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 33px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-weight: bold;
-}
-nav a {
-    color: #ffffff; /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s; /* Transición suave */
-}
-nav a:hover {
-    background-color: #000000; /* Color de fondo al hacer hover */
-    color: #160077; /* Cambiar color del texto al hacer hover */
 }
 
 .hero {
@@ -62,9 +12,14 @@ nav a:hover {
     text-align: center;
 }
 
+.content {
+    max-width: 572px;
+}
+
 .content h1 {
     font-size: 4em;
     margin: 0;
+    text-align: left;
 }
 
 button {
@@ -121,8 +76,31 @@ button:hover {
     height: 700px; /* Mantiene la proporción del GIF */
     opacity: 0.7; /* Ajusta la opacidad del GIF */
 }
+
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.earth-title {
+    color: white;
+    font-family: Jockey One;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 100px;
+    text-align: left;
+}
+
+.explore-button {
+    width: 235px;
+    gap: 0px;
+    border-radius: 41px;
+    opacity: 0px;
+
+    background: rgba(217, 217, 217, 0.3);
+    border: 0.2px solid;
+    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 100%);
+    margin-top: 50px;
+
 }

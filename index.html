@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <nav>
+        <img src="img/EcoStories.png" />
         <ul class="words">
-            <li><a href="/">HOME</a></li>
-            <li><a href="explore.html">EXPLORE</a></li>
-            <li><a href="information.html">INFORMATION</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a class="nav-title" href="/">HOME</a></li>
+            <li><a class="nav-title" href="explore.html">EXPLORE</a></li>
+            <li><a class="nav-title" href="information.html">INFORMATION</a></li>
+            <li><a class="nav-title" href="about.html">ABOUT</a></li>
         </ul>
     </nav>
     <hr>
     <section class="hero">
         <div class="globe">
-            <img src="img/earth1.gif" alt="" class="img">
+            <img clas="earth-image" src="img/earth1.gif" alt="" class="img">
         </div>
         <div class="content">
-            <h1 class="texto-con-gif">THE EARTH<br>IS CHANGING</h1>
-
-            <button class="nnn">Explore</button>
-            <button id="leer" class="nnn">Read this</button>
+            <div class="earth-title">THE EARTH IS CHANGING</div>
+            <button class="explore-button">Explore</button>
         </div>
-        
     </section>
     <script>
         document.getElementById('leer').addEventListener('click', function() {
-    const texto = document.body.innerText; // Obtiene todo el texto de la página
-    const utterance = new SpeechSynthesisUtterance(texto); // Crea un nuevo objeto de síntesis de voz
-    utterance.rate = 0.7; // Ajusta la velocidad de la voz (1 es la velocidad normal, menos de 1 es más lento)
-    speechSynthesis.speak(utterance); // Reproduce el texto
-});
+        const texto = document.body.innerText; // Obtiene todo el texto de la página
+        const utterance = new SpeechSynthesisUtterance(texto); // Crea un nuevo objeto de síntesis de voz
+        utterance.rate = 0.7; // Ajusta la velocidad de la voz (1 es la velocidad normal, menos de 1 es más lento)
+        speechSynthesis.speak(utterance); // Reproduce el texto
+    });
     </script>
     
 </body>
