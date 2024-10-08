@@ -10,6 +10,7 @@ nav {
   justify-content: space-between;
   padding: 22px;
   background: rgba(0, 0, 0, 0.5);
+  align-items: center;
 }
 
 nav ul {
@@ -21,17 +22,12 @@ nav ul {
 }
 
 nav a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a {
   color: #ffffff; /* Color del texto */
   text-decoration: none; /* Sin subrayado */
   padding: 10px 15px; /* Espaciado interno */
   border-radius: 5px; /* Bordes redondeados */
   transition: background-color 0.3s; /* Transición suave */
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -45,4 +41,8 @@ nav a:hover {
   font-weight: 400;
   line-height: 27.72px;
   text-align: left;
+}
+
+hr {
+  margin: 0 auto;
 }
