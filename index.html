@@ -1,45 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="https://res.cloudinary.com/phonerefer/image/upload/v1575096088/ve0o2n85nfvgdatgqer2.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#343a40" />
+  <meta
+          name="description"
+          content="Links To My Accounts | Developed By - Your Name"
+  />  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <title>Links - Your Name</title>
+     <style>
+       body{
+         background-color: #faf8ef;
+       }
+       h5{
+             color: #343a40;
+       }
+       .name{
+           color: #343a40;
+       }
+       .love{
+           color: #343a40 !important;
+       }
+       /*----------------- Mail-------------------- */
+       #email{
+           text-decoration: none;
+           float: right;
+           color:#343a40;
+       }
+       .footer{
+           margin-top: 5% !important;
+           margin-bottom: 10px;
+       }
+       @media (max-width: 479px) {
+            .footer{
+            margin-top: 35% !important;
+            }
+       }
+     </style>
 </head>
 <body>
-    <nav>
-        <img src="img/EcoStories.png" />
-        <ul class="words">
-            <li><a class="nav-title" href="index.html">HOME</a></li>
-            <li><a class="nav-title" href="explore.html">EXPLORE</a></li>
-            <li><a class="nav-title" href="information.html">INFORMATION</a></li>
-            <li><a class="nav-title" href="about.html">ABOUT</a></li>
-            <li><a class="nav-title" href="https://www.figma.com/proto/Zjwnzqwu1TQ5ipsg8pVvyT/EcoStories?node-id=140-5149&node-type=frame&t=yveIYpPaRNDTdjql-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A3&starting-point-node-id=140%3A5149" target="_blank">WEB TOUR ⤴ </a></li>
-        </ul>
-    </nav>
-    <hr>
-    <div class="line"></div>
-    <section class="hero">
-        <div class="globe">
-            <img clas="earth-image" src="img/earth1.gif" alt="" class="img">
-        </div>
-        <div class="content">
-            <div class="earth-title">THE EARTH IS CHANGING</div>
-            <button class="explore-button" onclick="location.href='explore.html';">Explore</button>
-        </div>
-    </section>
-    <script>
-        document.getElementById('leer').addEventListener('click', function() {
-        const texto = document.body.innerText; // Obtiene todo el texto de la página
-        const utterance = new SpeechSynthesisUtterance(texto); // Crea un nuevo objeto de síntesis de voz
-        utterance.rate = 0.7; // Ajusta la velocidad de la voz (1 es la velocidad normal, menos de 1 es más lento)
-        speechSynthesis.speak(utterance); // Reproduce el texto
-    });
-    </script>
-    
+<div class="container">
+  <div class="media mt-5">
+    <img src="https://avatars.githubusercontent.com/u/183937474?s=200&v=4" class="m-3" alt="image" width="75px" height="75px">
+    <div class="media-body m-2">
+      <h5 class="align-items-center mt-2">EcoStories</h5>
+      <p>Hello! We are a team of Dominicans concerned and aware of climate change and we firmly believe in the power of technology to tell stories that connect people with the environment.</p>
+    </div>
+  </div>
+<div class="mt-4">
+  <a href="https://www.figma.com/proto/Zjwnzqwu1TQ5ipsg8pVvyT/EcoStories?node-id=140-5149&node-type=frame&t=yveIYpPaRNDTdjql-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A3&starting-point-node-id=140%3A5149" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-figma">&nbsp;</i>Prototype</a>
+  <br>
+  <a href="home.html" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-codepen">&nbsp;</i>Website</a>
+  <br>
+  <a href="https://github.com/EcoStories/nasa-space-app-challenge" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fab fa-github">&nbsp;</i>Source Code</a>
+  <br>
+  <a href="https://earth.gov/ghgcenter/api/stac/docs" class="btn btn-outline-dark btn-block" role="button" target="_blank"><i class="fa fa-code">&nbsp;</i>APIs</a>
+</div>
+        <!--------------------Footer---------------------------->
+  <div class="footer mt-5">
+    <hr/>
+    <h6>Made With <span class="love">♥</span> in Santo Domingo, Dominican Republic</h6>
+  </div>
+</div>
 </body>
+  
 </html>
